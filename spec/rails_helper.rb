@@ -12,6 +12,7 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 
 RSpec.configure do |config|
+  config.include FactoryBot::Syntax::Methods
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = true
   # RSpec Rails can automatically mix in different behaviours to your tests

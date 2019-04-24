@@ -1,10 +1,22 @@
 {
   "RSpec": {
     "coverage": {
+      "/home/laerte/Repositórios GitHub/renewal/app/models/user.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
       "/home/laerte/Repositórios GitHub/renewal/app/models/application_record.rb": [
-        0,
-        0,
-        0
+        1,
+        1,
+        null
+      ],
+      "/home/laerte/Repositórios GitHub/renewal/app/helpers/application_helper.rb": [
+        1,
+        null
       ],
       "/home/laerte/Repositórios GitHub/renewal/app/mailers/application_mailer.rb": [
         0,
@@ -15,28 +27,8 @@
       "/home/laerte/Repositórios GitHub/renewal/app/controllers/application_controller.rb": [
         0,
         0
-      ],
-      "/home/laerte/Repositórios GitHub/renewal/app/channels/application_cable/connection.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/laerte/Repositórios GitHub/renewal/app/channels/application_cable/channel.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/laerte/Repositórios GitHub/renewal/app/jobs/application_job.rb": [
-        0,
-        0
-      ],
-      "/home/laerte/Repositórios GitHub/renewal/app/helpers/application_helper.rb": [
-        0,
-        0
       ]
     },
-    "timestamp": 1555976209
+    "timestamp": 1556150011
   }
 }
