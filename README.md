@@ -1,24 +1,4 @@
-# README
+# Renewal
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[![Build Status](https://travis-ci.org/laerte-guimaraes/renewal.svg?branch=master)](https://travis-ci.org/laerte-guimaraes/renewal)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e3601a4a5834419b959b355d05a3977c)](https://www.codacy.com/app/laerte-guimaraes/renewal?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=laerte-guimaraes/renewal&amp;utm_campaign=Badge_Grade)
