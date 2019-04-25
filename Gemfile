@@ -10,6 +10,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
+gem 'libv8'
 gem 'mini_magick', '~> 4.8'
 gem 'mini_racer', platforms: :ruby
 gem 'puma', '~> 3.11'
