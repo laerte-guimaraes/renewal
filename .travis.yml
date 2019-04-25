@@ -13,6 +13,9 @@ before_script:
   - gem install bundle-audit
 
 script:
+  - export CODACY_PROJECT_TOKEN
+  - export INTEGRATION_KEY
+  - export INTEGRATION_URL
   - RAILS_ENV=test bundle exec rake db:test:prepare
   - bundle exec rspec
   - bundle exec rubocop --config .rubocop.yml

@@ -3,6 +3,8 @@ SimpleCov.start 'rails' do
   add_filter '/jobs'
   add_filter '/channels'
 end
+require 'codacy-coverage'
+Codacy::Reporter.start
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
