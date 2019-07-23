@@ -1,30 +1,4 @@
 pt-BR:
-  activerecord:
-    attributes:
-      user:
-        confirmation_sent_at: Confirmação enviada em
-        confirmation_token: Token de confirmação
-        confirmed_at: Confirmado em
-        created_at: Criado em
-        current_password: Senha atual
-        current_sign_in_at: Atualmente logado em
-        current_sign_in_ip: IP do acesso atual
-        email: Email
-        encrypted_password: Senha criptografada
-        failed_attempts: Tentativas sem sucesso
-        last_sign_in_at: Último acesso em
-        last_sign_in_ip: Último IP de acesso
-        locked_at: Bloqueado em
-        password: Senha
-        password_confirmation: Confirme sua senha
-        reset_password_sent_at: Resetar senha enviado em
-        reset_password_token: Resetar token de senha
-        sign_in_count: Contagem de acessos
-        unconfirmed_email: E-mail não confirmado
-        unlock_token: Token de desbloqueio
-        updated_at: Atualizado em
-    models:
-      user: Usuário
   devise:
     confirmations:
       confirmed: A sua conta foi confirmada com sucesso.
@@ -98,7 +72,7 @@ pt-BR:
         update: Atualizar
         we_need_your_current_password_to_confirm_your_changes: precisamos da sua senha atual para confirmar suas mudanças
       new:
-        sign_up: Inscrever-se
+        sign_up: Cadastrar-se
       signed_up: Bem vindo! Você realizou seu registro com sucesso.
       signed_up_but_inactive: Você se inscreveu com sucesso, porém nós não podemos autenticá-lo porque sua conta ainda não foi ativada.
       signed_up_but_locked: Você se inscreveu com sucesso. Porém nós não podemos autenticá-lo porque sua conta está bloqueada.
@@ -120,7 +94,7 @@ pt-BR:
         forgot_your_password: Esqueceu sua senha?
         sign_in: Login
         sign_in_with_provider: Entrar com %{provider}
-        sign_up: Inscrever-se
+        sign_up: Cadastrar-se
       minimum_password_length:
         one: "(Mínimo de %{count} caractere)"
         other: "(Mínimo de %{count} caracteres)"

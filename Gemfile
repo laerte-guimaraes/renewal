@@ -17,7 +17,6 @@ gem 'mini_racer', platforms: :ruby
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.3'
 gem 'sass-rails', '~> 5.0'
-gem 'simple_form'
 gem 'sqlite3'
 gem 'turbolinks', '~> 5'
 gem 'tzinfo-data'

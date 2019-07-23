@@ -1,6 +1,6 @@
 <center>
 	<%- if controller_name != 'sessions' %>
-	  <%= link_to "Entrar", new_session_path(resource_name) %><br />
+	  <%= link_to "Voltar ao início", new_session_path(resource_name) %><br />
 	<% end %>
 
 	<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
