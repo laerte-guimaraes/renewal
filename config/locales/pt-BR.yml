@@ -16,7 +16,9 @@ pt-BR:
         last_sign_in_ip: Último IP de acesso
         locked_at: Bloqueado em
         password: Senha
+        new_password: Nova senha
         password_confirmation: Confirme sua senha
+        new_password_confirmation: Confirme sua nova senha
         reset_password_sent_at: Resetar senha enviado em
         reset_password_token: Resetar token de senha
         sign_in_count: Contagem de acessos
