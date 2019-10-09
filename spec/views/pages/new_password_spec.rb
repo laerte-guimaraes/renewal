@@ -4,7 +4,6 @@ RSpec.describe 'Na página de recuperação de senha', type: :feature do
   before { visit new_user_password_path }
 
   context 'visualizando os elementos da página' do
-
     it 'visualiza campo de email' do
       expect(page).to have_field('Email')
     end

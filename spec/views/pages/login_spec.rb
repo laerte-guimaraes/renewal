@@ -4,7 +4,6 @@ RSpec.describe 'Na página de login', type: :feature do
   before { visit unauthenticated_root_path }
 
   context 'visualizando os elementos da página' do
-
     it 'visualiza a mensagem de boas vindas' do
       expect(page).to have_content('Olá! Faça seu login para continuar.')
     end
