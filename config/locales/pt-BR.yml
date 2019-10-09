@@ -34,5 +34,10 @@ pt-BR:
             email:
               blank: 'é obrigatório.'
               invalid: 'é inválido.'
+              taken: 'já cadastrado.'
             password:
               blank: 'é obrigatória.'
+              invalid: 'é inválida.'
+              too_short: 'é muito curta.'
+            password_confirmation:
+              confirmation: 'Confirmação de senha é inválida.'
