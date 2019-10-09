@@ -50,14 +50,14 @@ RSpec.describe 'Na página de login', type: :feature do
         expect(page).to have_text 'Email ou senha inválidos.'
       end
 
-      it 'deve obrigar o preenchimento do email' do
+      it 'deve obrigar o preenchimento da senha' do
         fill_in 'Email', with: 'tester@mail.com'
         click_on 'Login'
 
         expect(page).to have_text 'Email ou senha inválidos.'
       end
 
-      it 'deve obrigar o preenchimento da senha' do
+      it 'deve obrigar o preenchimento do email' do
         fill_in 'Senha', with: '123456'
         click_on 'Login'
 
