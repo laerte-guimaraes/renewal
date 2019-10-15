@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.6.1
+  - 2.6.3
 
 env:
   global:
@@ -18,5 +18,4 @@ script:
   - export INTEGRATION_URL
   - RAILS_ENV=test bundle exec rake db:test:prepare
   - bundle exec rspec
-  - bundle exec rubocop --config .rubocop.yml
   - bundle-audit check --update

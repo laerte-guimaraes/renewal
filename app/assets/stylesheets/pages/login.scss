@@ -1,0 +1,53 @@
+.login-form {
+  width: 385px; 
+  margin: 20px auto; 
+}
+
+.login-form h2 {
+  margin: 15px 0 15px 0;
+}
+
+.form-control, .btn-login {
+  min-height: 38px;
+  border-radius: 2px;
+}
+
+.input-group-addon .fa {
+  font-size: 18px;
+}
+
+.or-seperator {
+  margin-top: 20px;
+  text-align: center;
+  border-top: 1px solid $gray;
+}
+
+.centered {
+  text-align: center;
+}
+
+.screen-centered {
+  position: absolute;
+  left: 1%;
+  right: 1%;
+  top: 15%;
+  margin: auto;
+}
+
+.form-group {
+  margin: 15px 0 15px 0;
+}
+
+.login-access-title {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.btn-login {
+  background-color: $company-blue;
+  color: $white;
+  &:hover {
+    background-color: $hover-company-blue;
+    color: $white;
+  }
+}

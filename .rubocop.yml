@@ -1,9 +1,11 @@
+require:
+  - rubocop
+  - rubocop-rspec
+  - rubocop-rails
+
 inherit_mode:
   merge:
     - Include
-
-Rails:
- Enabled: true
 
 AllCops:
  UseCache: false
@@ -35,3 +37,6 @@ Metrics/BlockLength:
 
 Metrics/LineLength:
  Max: 100
+
+Rails:
+ Enabled: true
