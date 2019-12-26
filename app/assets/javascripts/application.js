@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require dashboard/core/jquery.min
 //= require bootstrap-sprockets 
 //= require activestorage
 //= require turbolinks
