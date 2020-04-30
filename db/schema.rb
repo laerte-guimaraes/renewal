@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_30_023339) do
+ActiveRecord::Schema.define(version: 2020_04_30_034407) do
+
+  create_table "contracts", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_contracts_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +30,10 @@ ActiveRecord::Schema.define(version: 2020_04_30_023339) do
     t.string "name", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "api_token", limit: 64
-    t.index ["api_token"], name: "index_users_on_api_token", unique: true
+    t.string "authentication_token", limit: 255
+    t.integer "contract_id"
+    t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
+    t.index ["contract_id"], name: "index_users_on_contract_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
