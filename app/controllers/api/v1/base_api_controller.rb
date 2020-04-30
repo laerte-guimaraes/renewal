@@ -1,5 +1,5 @@
 module API::V1
-  lass BaseAPIController < ApplicationControllerAPI
+  class BaseAPIController < ApplicationControllerAPI
     acts_as_token_authentication_handler_for User
 
     before_action :require_authentication!

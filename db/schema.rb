@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_04_30_034407) do
 
   create_table "contracts", force: :cascade do |t|
-    t.string "name"
+    t.string "name", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"

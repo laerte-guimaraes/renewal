@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :contract do
-    name { "Renewal" }
+    name { Faker::Company.name }
   end
 end
