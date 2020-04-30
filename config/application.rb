@@ -20,5 +20,18 @@ module Renewal
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
     config.i18n.available_locales = 'pt-BR'
     config.i18n.default_locale = 'pt-BR'
+
+    # API visibility settings
+    config.middleware.insert_before 0, Rack::Cors do
+     allow do
+       origins '*'
+       resource '*',
+         headers: :any,
+         methods: %i(get post put patch delete options head)
+     end
+    end
+    
+    # Extra brute force protection 
+    config.middleware.use Rack::Attack
   end
 end
