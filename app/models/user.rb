@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  acts_as_token_authenticatable
-
   belongs_to :contract
 
   # Include default devise modules. Others available are:
