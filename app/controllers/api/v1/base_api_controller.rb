@@ -3,16 +3,36 @@ module Api::V1
     before_action :require_authentication!
     before_action :require_json_content_type!
 
+    def return_json(response_body, response_status = :ok)
+      render(json: response_body, status: response_status)
+    end
+
     def return_unauthorized_response
-      render json: {
-        "#{I18n.t('api.response.type.error')}": "#{I18n.t('api.response.message.invalid_token')}"
-      }, status: :unauthorized
+      return_json({
+        "#{I18n.t('api.response.type.error')}":
+        "#{I18n.t('api.response.message.invalid_token')}"
+      }, :unauthorized)
     end
 
     def return_invalid_content_type_response
-      render json: {
-        "#{I18n.t('api.response.type.error')}": "#{I18n.t('api.response.message.invalid_content')}"
-      }, status: :precondition_failed
+      return_json({
+        "#{I18n.t('api.response.type.error')}":
+        "#{I18n.t('api.response.message.invalid_content')}"
+      }, :precondition_failed)
+    end
+
+    def return_not_found_response(entitie, entitie_id)
+      return_json({
+        "#{I18n.t('api.response.type.not_found')}":
+        "#{I18n.t("api.entitie.#{entitie}")} ID:#{entitie_id}"
+      }, :not_found)
+    end
+
+    def return_deleted_response(entitie, entitie_id)
+      return_json({
+        "#{I18n.t('api.response.type.deleted')}":
+        "#{I18n.t("api.entitie.#{entitie}")} ID:#{entitie_id}"
+      }, :accepted)
     end
 
     private

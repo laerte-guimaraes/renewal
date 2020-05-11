@@ -4,39 +4,47 @@ module Api::V1
 
     def index
       @contracts = Contract.all
-      render json: @contracts
+      return_json(Response::Contracts.full(@contracts), :ok)
     end
 
     def show
-      render json: @contract
+      return_json(Response::Contracts.full([@contract]), :ok)
     end
 
     def create
       @contract = Contract.new(contract_params)
 
       if @contract.save
-        render json: @contract, status: :created
+        return_json(Response::Contracts.full([@contract]), :created)
       else
-        render json: @contract.errors, status: :unprocessable_entity
+        return_json(@contract.errors, :unprocessable_entity)
       end
     end
 
     def update
       if @contract.update(contract_params)
-        render json: @contract
+        return_json(Response::Contracts.full([@contract]), :accepted)
       else
-        render json: @contract.errors, status: :unprocessable_entity
+        return_json(@contract.errors, :unprocessable_entity)
       end
     end
 
     def destroy
-      @contract.destroy
+      begin
+        return_deleted_response('contract', params[:id]) if @contract.destroy
+      rescue NoMethodError
+        return_json(@contract.errors, :unprocessable_entity)
+      end
     end
 
     private
 
     def set_contract
-      @contract = Contract.find(params[:id])
+      begin
+        @contract = Contract.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        return_not_found_response('contract', params[:id])
+      end
     end
 
     def contract_params
@@ -46,15 +54,19 @@ module Api::V1
     end
 
     def permitted_params
-      [ :name ]
+      %i[name]
     end
 
     def users
-      user_ids = params.require(:users).map do |parameter|
-        parameter.permit(:user_id)
-      end.pluck(:user_id)
+      begin
+        user_ids = params.require(:users).map do |parameter|
+          parameter.permit(:user_id)
+        end.pluck(:user_id)
 
-      User.where(id: user_ids)
+        User.where(id: user_ids)
+      rescue ActionController::ParameterMissing
+        []
+      end
     end
   end
 end
