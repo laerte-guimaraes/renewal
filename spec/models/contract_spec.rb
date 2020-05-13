@@ -30,6 +30,7 @@ RSpec.describe Contract, type: :model do
 
     context 'não informando um usuário' do
       let(:contract) { build(:contract, name: 'Renewal') }
+
       before { contract.save }
 
       it 'deve criar um novo contrato' do

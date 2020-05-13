@@ -1,6 +1,6 @@
 module Api::V1
   class ContractsController < BaseAPIController
-    before_action :set_contract, only: [:show, :update, :destroy]
+    before_action :set_contract, only: %i[show update destroy]
 
     def index
       @contracts = Contract.all
@@ -58,15 +58,13 @@ module Api::V1
     end
 
     def users
-      begin
-        user_ids = params.require(:users).map do |parameter|
-          parameter.permit(:user_id)
-        end.pluck(:user_id)
+      user_ids = params.require(:users).map do |parameter|
+        parameter.permit(:user_id)
+      end.pluck(:user_id)
 
-        User.where(id: user_ids)
-      rescue ActionController::ParameterMissing
-        []
-      end
+      User.where(id: user_ids)
+    rescue ActionController::ParameterMissing
+      []
     end
   end
 end

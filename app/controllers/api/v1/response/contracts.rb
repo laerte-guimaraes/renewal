@@ -2,7 +2,7 @@ module Api::V1::Response
   class Contracts
     class << self
       def full(objects)
-        response = objects.map do |object|
+        objects.map do |object|
           full_parameters.each_with_object({}) do |parameter, response|
             response.merge!(parameter => object.send(parameter))
           end
