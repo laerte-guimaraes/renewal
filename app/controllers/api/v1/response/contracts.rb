@@ -14,10 +14,6 @@ module Api::V1::Response
       def full_parameters
         %i[id name created_at users]
       end
-
-      def filtered_parameters
-        %i[authentication_token]
-      end
     end
   end
 end
