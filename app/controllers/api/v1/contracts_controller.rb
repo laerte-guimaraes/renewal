@@ -4,18 +4,18 @@ module Api::V1
 
     def index
       @contracts = Contract.all
-      return_json(Response::Contracts.full(@contracts), :ok)
+      return_json(Response::Contract.full(@contracts), :ok)
     end
 
     def show
-      return_json(Response::Contracts.full([@contract]), :ok)
+      return_json(Response::Contract.full([@contract]), :ok)
     end
 
     def create
       @contract = Contract.new(contract_params)
 
       if @contract.save
-        return_json(Response::Contracts.full([@contract]), :created)
+        return_json(Response::Contract.full([@contract]), :created)
       else
         return_json(@contract.errors, :unprocessable_entity)
       end
@@ -23,7 +23,7 @@ module Api::V1
 
     def update
       if @contract.update(contract_params)
-        return_json(Response::Contracts.full([@contract]), :accepted)
+        return_json(Response::Contract.full([@contract]), :accepted)
       else
         return_json(@contract.errors, :unprocessable_entity)
       end

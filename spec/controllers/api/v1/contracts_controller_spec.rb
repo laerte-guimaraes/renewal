@@ -1,17 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe Api::V1::ContractsController, type: :controller do
+  let(:json_response) { JSON.parse(response.body).shift }
+
   context '#index' do
     let(:contract) { Contract.first }
     let(:response) { get_with_authentication(:index) }
+    let(:user) { contract.users.first }
+    let(:users) { [{ 'id' => user.id, 'name' => user.name, 'email' => user.email }] }
 
     it 'retorna os dados dos contratos cadastrados' do
-      json_response = JSON.parse(response.body).shift
-
       expect(json_response['id']).to eq(contract.id)
       expect(json_response['name']).to eq(contract.name)
-      expect(json_response['created_at'].to_date).to eq(contract.created_at.to_date)
-      expect(json_response['users']).to eq(JSON.parse(contract.users.to_json))
+      expect(json_response['users']).to eq(users)
     end
 
     it 'retorna o status http 200' do
@@ -25,11 +26,8 @@ RSpec.describe Api::V1::ContractsController, type: :controller do
 
     context 'especificado um contrato já existente' do
       it 'retorna os dados do contrato especificado' do
-        json_response = JSON.parse(response.body).shift
-
         expect(json_response['id']).to eq(contract.id)
         expect(json_response['name']).to eq(contract.name)
-        expect(json_response['created_at'].to_date).to eq(contract.created_at.to_date)
         expect(json_response['users']).to eq(JSON.parse(contract.users.to_json))
       end
 
@@ -42,8 +40,7 @@ RSpec.describe Api::V1::ContractsController, type: :controller do
       let(:response) { get_with_authentication(:show, { id: 0 }) }
 
       it 'retorna que o contato especificado não existe' do
-        expected_response = { 'Não encontrado' => 'Contrato ID:0' }
-        json_response = JSON.parse(response.body)
+        expected_response = [ 'Não encontrado', 'Contrato ID:0' ]
 
         expect(expected_response).to eq(json_response)
       end
@@ -65,11 +62,8 @@ RSpec.describe Api::V1::ContractsController, type: :controller do
       end
 
       it 'retorna os dados do contrato criado' do
-        json_response = JSON.parse(response.body).shift
-
         expect(json_response['id']).to eq(contract.id)
         expect(json_response['name']).to eq(name)
-        expect(json_response['created_at'].to_date).to eq(contract.created_at.to_date)
         expect(json_response['users']).to eq(JSON.parse(contract.users.to_json))
       end
 
@@ -79,15 +73,13 @@ RSpec.describe Api::V1::ContractsController, type: :controller do
 
       context 'associando um usuário' do
         let(:user) { create(:user) }
+        let(:user_in_json) { [ { 'id' => user.id, 'name' => user.name, 'email' => user.email } ] }
         let(:response) do
           post_with_authentication(:create, { name: name, users: [ user_id: user.id ] })
         end
 
         it 'retorna os dados do usuário associado com o contrato' do
-          json_response = JSON.parse(response.body).shift['users'].shift.sort
-          user_in_json = JSON.parse(user.reload.to_json).sort
-
-          expect(json_response).to eq(user_in_json)
+          expect(json_response['users']).to eq(user_in_json)
         end
       end
     end
@@ -101,8 +93,7 @@ RSpec.describe Api::V1::ContractsController, type: :controller do
       end
 
       it 'retorna os erros de criação do contrato' do
-        expected_response = { 'name' => [ 'é obrigatório.' ] }
-        json_response = JSON.parse(response.body)
+        expected_response = [ 'name', [ 'é obrigatório.' ] ]
 
         expect(expected_response).to eq(json_response)
       end
@@ -121,11 +112,8 @@ RSpec.describe Api::V1::ContractsController, type: :controller do
       let(:response) { put_with_authentication(:update, { id: contract.id, name: name }) }
 
       it 'retorna os dados do contrato atualizado' do
-        json_response = JSON.parse(response.body).shift
-
         expect(json_response['id']).to eq(contract.id)
         expect(json_response['name']).to eq(name)
-        expect(json_response['created_at'].to_date).to eq(contract.created_at.to_date)
         expect(json_response['users']).to eq(JSON.parse(contract.users.to_json))
       end
 
@@ -142,8 +130,7 @@ RSpec.describe Api::V1::ContractsController, type: :controller do
       end
 
       it 'retorna os erros de atualização do contrato' do
-        expected_response = { 'name' => [ 'é obrigatório.' ] }
-        json_response = JSON.parse(response.body)
+        expected_response = [ 'name', [ 'é obrigatório.' ] ]
 
         expect(expected_response).to eq(json_response)
       end
@@ -165,8 +152,7 @@ RSpec.describe Api::V1::ContractsController, type: :controller do
       end
 
       it 'retorna a mensagem que o contrato foi deletado' do
-        expected_response = { 'Deletado' => "Contrato ID:#{contract.id}" }
-        json_response = JSON.parse(response.body)
+        expected_response = [ 'Deletado', "Contrato ID:#{contract.id}" ]
 
         expect(expected_response).to eq(json_response)
       end
@@ -180,8 +166,7 @@ RSpec.describe Api::V1::ContractsController, type: :controller do
       let(:response) { delete_with_authentication(:destroy, { id: 0 }) }
 
       it 'retorna que o contato especificado não existe' do
-        expected_response = { 'Não encontrado' => 'Contrato ID:0' }
-        json_response = JSON.parse(response.body)
+        expected_response = [ 'Não encontrado', 'Contrato ID:0' ]
 
         expect(expected_response).to eq(json_response)
       end

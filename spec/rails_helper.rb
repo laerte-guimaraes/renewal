@@ -17,6 +17,8 @@ Dir[globbed_path].each { |file| require file }
 RSpec.configure do |config|
   config.include Rails.application.routes.url_helpers
   config.include Warden::Test::Helpers
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include WebMock::API, type: :external
   config.include FactoryBot::Syntax::Methods
   config.include ApiHelper
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
