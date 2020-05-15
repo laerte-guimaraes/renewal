@@ -15,6 +15,8 @@ gem 'libv8', '~> 6.7'
 gem 'mini_magick', '~> 4.9.4'
 gem 'mini_racer', platforms: :ruby
 gem 'puma', '~> 3.12'
+gem 'rack-attack'
+gem 'rack-cors'
 gem 'rails', '~> 5.2.3'
 gem 'sass-rails', '~> 5.0'
 gem 'sqlite3'
@@ -31,6 +33,8 @@ group :development, :test do
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
+  gem 'vcr', require: false
+  gem 'webmock', require: false
 end
 
 group :development do
@@ -43,6 +47,7 @@ end
 
 group :test do
   gem 'capybara', '>= 2.15'
+  gem 'faker'
   gem 'selenium-webdriver'
   gem 'simplecov', require: false, group: :test
   gem 'webdrivers'

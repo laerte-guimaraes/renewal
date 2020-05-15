@@ -3,11 +3,14 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   context 'durante o cadastro de usuários' do
     context 'informando todos os dados corretamente' do
-      let(:user) { build(:user, name: 'Afonso', email: 'afs@gmail.com', password: '123456') }
+      let(:contract) { build(:contract) }
+      let(:user) do
+        build(:user, name: 'Afonso', email: 'afs@gmail.com', password: '123456', contract: contract)
+      end
+
       before { user.save }
 
       it 'deve criar um novo usuário' do
-        expect(user.save).to be_truthy
         expect(User.last).to eq(user)
       end
 
@@ -17,11 +20,14 @@ RSpec.describe User, type: :model do
     end
 
     context 'não informando email' do
-      let(:user) { build(:user, name: 'Afonso', email: nil, password: '123456') }
+      let(:contract) { build(:contract) }
+      let(:user) do
+        build(:user, name: 'Afonso', email: nil, password: '123456', contract: contract)
+      end
+
       before { user.save }
 
       it 'não deve salvar o usuário' do
-        expect(user.save).to be_falsey
         expect(User.last).not_to be_present
       end
 
@@ -31,7 +37,10 @@ RSpec.describe User, type: :model do
     end
 
     context 'não informando nome' do
-      let(:user) { build(:user, name: nil, email: 'afs@gmail.com', password: '123456') }
+      let(:contract) { build(:contract) }
+      let(:user) do
+        build(:user, name: nil, email: 'afs@gmail.com', password: '123456', contract: contract)
+      end
 
       it 'não deve salvar o usuário' do
         try { user.save } rescue { }
@@ -44,11 +53,14 @@ RSpec.describe User, type: :model do
     end
 
     context 'não informando senha' do
-      let(:user) { build(:user, name: 'Afonso', email: 'afs@gmail.com', password: nil) }
+      let(:contract) { build(:contract) }
+      let(:user) do
+        build(:user, name: 'Afonso', email: 'afs@gmail.com', password: nil, contract: contract)
+      end
+
       before { user.save }
 
       it 'não deve salvar o usuário' do
-        expect(user.save).to be_falsey
         expect(User.last).not_to be_present
       end
 

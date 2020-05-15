@@ -1,0 +1,13 @@
+pt-BR:
+  api:
+    entitie:
+      contract: Contrato
+      user: Usuário
+    response:
+      type:
+        error: Erro
+        not_found: Não encontrado
+        deleted: Deletado
+      message:
+        invalid_token: Token de Autenticação Inválido
+        invalid_content: Content-Type deve ser application/json

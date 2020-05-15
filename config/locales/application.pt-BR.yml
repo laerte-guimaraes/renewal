@@ -25,19 +25,27 @@ pt-BR:
         unconfirmed_email: E-mail não confirmado
         unlock_token: Token de desbloqueio
         updated_at: Atualizado em
+      contract:
+        name: Nome
     models:
       user: Usuário
+      contract: Contrato
     errors:
       models:
         user:
           attributes:
             email:
-              blank: 'é obrigatório.'
-              invalid: 'é inválido.'
-              taken: 'já cadastrado.'
+              blank: é obrigatório.
+              invalid: é inválido.
+              taken: já cadastrado.
             password:
-              blank: 'é obrigatória.'
-              invalid: 'é inválida.'
-              too_short: 'é muito curta.'
+              blank: é obrigatória.
+              invalid: é inválida.
+              too_short: é muito curta.
             password_confirmation:
-              confirmation: 'Confirmação de senha é inválida.'
+              confirmation: Confirmação de senha é inválida.
+        contract:
+          attributes:
+            name:
+              blank: 'é obrigatório.'
+              invalid: é inválido.
