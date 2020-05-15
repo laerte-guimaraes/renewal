@@ -2,7 +2,9 @@ require 'simplecov'
 SimpleCov.start 'rails' do
   add_filter '/jobs'
   add_filter '/channels'
+  add_filter '/mailers'
 end
+
 require 'codacy-coverage'
 Codacy::Reporter.start
 
