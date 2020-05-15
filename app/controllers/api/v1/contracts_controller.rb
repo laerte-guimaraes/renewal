@@ -30,11 +30,7 @@ module Api::V1
     end
 
     def destroy
-      begin
-        return_deleted_response('contract', params[:id]) if @contract.destroy
-      rescue NoMethodError
-        return_json(@contract.errors, :unprocessable_entity)
-      end
+      return_deleted_response('contract', params[:id]) if @contract.destroy
     end
 
     private
