@@ -7,6 +7,6 @@ class User < ApplicationRecord
   before_create :generate_authentication_token
 
   def generate_authentication_token
-    authentication_token = SecureRandom.urlsafe_base64(32)
+    self.authentication_token = SecureRandom.urlsafe_base64(32)
   end
 end
