@@ -31,6 +31,6 @@ module ApiHelper
   end
 
   def valid_authentication_token
-    valid_authentication_token ||= create(:user).authentication_token
+    @valid_authentication_token ||= create(:user).authentication_token
   end
 end
