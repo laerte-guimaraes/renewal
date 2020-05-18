@@ -2,6 +2,7 @@ pt-BR:
   activerecord:
     attributes:
       user:
+        contract: Contrato
         confirmation_sent_at: Confirmação enviada em
         confirmation_token: Token de confirmação
         confirmed_at: Confirmado em
@@ -17,7 +18,7 @@ pt-BR:
         locked_at: Bloqueado em
         password: Senha
         new_password: Nova senha
-        password_confirmation: Confirme sua senha
+        password_confirmation: Confirmação de senha
         new_password_confirmation: Confirme sua nova senha
         reset_password_sent_at: Resetar senha enviado em
         reset_password_token: Resetar token de senha
@@ -43,11 +44,13 @@ pt-BR:
               invalid: é inválida.
               too_short: é muito curta.
             password_confirmation:
-              confirmation: Confirmação de senha é inválida.
+              confirmation: é inválida.
+            contract:
+              required: é obrigatório.
         contract:
           attributes:
             name:
-              blank: 'é obrigatório.'
+              blank: é obrigatório.
               invalid: é inválido.
       messages:
-        not_saved: Não foi possível salvar %{resource}
+        not_saved: Não foi possível salvar %{resource}!
