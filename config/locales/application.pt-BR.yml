@@ -49,3 +49,5 @@ pt-BR:
             name:
               blank: 'é obrigatório.'
               invalid: é inválido.
+      messages:
+        not_saved: Não foi possível salvar %{resource}
