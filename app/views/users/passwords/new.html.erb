@@ -1,6 +1,5 @@
 <div class='login-form screen-centered centered'>
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-    <%= render "users/shared/error_messages", resource: resource %>
     <%= image_tag "renewal_logo.png" %>
 
     <div class="form-group">
