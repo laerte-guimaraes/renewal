@@ -13,7 +13,7 @@
     <main role='main'>
       <div class='container'>
         <br>
-        <% if resource.errors.any? %>
+        <% if defined?(resource) && resource.errors.any? %>
           <%= render 'layouts/shared/error_messages', resource: resource %>
         <% end %>
         <% if notice %>
