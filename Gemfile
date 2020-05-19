@@ -1,16 +1,16 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '2.7.1'
 
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.3.1'
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails', '~> 5.0'
 gem 'devise'
 gem 'i18n'
-gem 'jbuilder', '~> 2.5'
+gem 'jbuilder', '~> 2.10'
 gem 'jquery-rails'
 gem 'libv8', '~> 6.7'
 gem 'mini_magick', '~> 4.9.4'
@@ -18,7 +18,7 @@ gem 'mini_racer', platforms: :ruby
 gem 'puma', '~> 3.12'
 gem 'rack-attack'
 gem 'rack-cors'
-gem 'rails', '~> 5.2.3'
+gem 'rails', '~> 6.0'
 gem 'sass-rails', '~> 5.0'
 gem 'sqlite3'
 gem 'turbolinks', '~> 5'
