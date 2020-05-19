@@ -1,0 +1,6 @@
+<div class="alert alert-danger" role="alert">
+  <strong> <%= I18n.t('activerecord.errors.messages.not_saved') %> </strong>
+  <% resource.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+</div>
