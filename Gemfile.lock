@@ -329,12 +329,12 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   codacy-coverage
-  coffee-rails
+  coffee-rails (~> 5.0)
   devise
   factory_bot_rails
   faker
   i18n
-  jbuilder
+  jbuilder (~> 2.10)
   jquery-rails
   letter_opener
   libv8 (~> 6.7)
@@ -344,7 +344,7 @@ DEPENDENCIES
   puma (~> 3.12)
   rack-attack
   rack-cors
-  rails
+  rails (~> 6.0)
   rspec-rails
   rubocop
   rubocop-performance
