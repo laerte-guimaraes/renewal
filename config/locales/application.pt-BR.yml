@@ -53,4 +53,4 @@ pt-BR:
               blank: é obrigatório.
               invalid: é inválido.
       messages:
-        not_saved: Não foi possível salvar %{resource}!
+        not_saved: Não foi possível realizar operação!

@@ -109,11 +109,11 @@ pt-BR:
       unlocked: A sua conta foi desbloqueada com sucesso. Você está autenticado.
   errors:
     messages:
-      already_confirmed: já foi confirmado
+      already_confirmed: já foi confirmado.
       confirmation_period_expired: É necessário ser confirmado dentro do período %{period}, por favor requisite um novo usuário.
-      expired: expirou, por favor solicite uma nova
-      not_found: não encontrado
-      not_locked: não foi bloqueado
+      expired: expirou, por favor solicite uma nova.
+      not_found: não encontrado.
+      not_locked: não foi bloqueado.
       not_saved:
         one: 'Não foi possível salvar %{resource}: 1 erro'
         other: 'Não foi possível salvar %{resource}: %{count} erros.'
