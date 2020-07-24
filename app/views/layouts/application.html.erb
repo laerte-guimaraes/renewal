@@ -11,20 +11,27 @@
 
   <body>
     <main role='main'>
-      <div class='container'>
-        <br>
-        <% if notice %>
-          <div class="alert alert-success" role="alert">
-            <%= notice %>
-          </div>
-        <% end %>
-        <% if alert %>
-          <div class="alert alert-danger" role="alert">
-            <%= alert %>
-          </div>
-          <p class="notice"><%= notice %></p>
-        <% end %>
-        <%= yield %>
+      <div class="main-panel">
+        <div class="content">
+          <%= render 'template/sidebar' %>
+          <%= render 'template/navbar' %>
+
+          <% if notice %>
+            <br>
+            <div class="alert alert-success" role="alert">
+              <%= notice %>
+            </div>
+          <% end %>
+          <% if alert %>
+            <br>
+            <div class="alert alert-danger" role="alert">
+              <%= alert %>
+            </div>
+            <p class="notice"><%= notice %></p>
+          <% end %>
+
+          <%= yield %>
+        </div>
       </div>
     </main>
   </body>
