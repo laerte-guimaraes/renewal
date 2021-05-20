@@ -15,7 +15,7 @@ gem 'jquery-rails'
 gem 'libv8', '~> 6.7'
 gem 'mini_magick', '~> 4.9.4'
 gem 'mini_racer', platforms: :ruby
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 4.3'
 gem 'rack-attack'
 gem 'rack-cors'
 gem 'rails', '~> 6.0'
