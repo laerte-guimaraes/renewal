@@ -1,7 +1,7 @@
-import React from "react"
+import React from 'react'
 import { Theme, Banner } from 'vindi-ds-components'
 
-function render(){
+export default function banner(){
   return (
     <Theme>
       <Banner withClose>
