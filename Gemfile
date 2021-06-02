@@ -24,6 +24,8 @@ gem 'sqlite3'
 gem 'turbolinks', '~> 5'
 gem 'tzinfo-data'
 gem 'uglifier', '>= 1.3.0'
+gem 'webpacker'
+gem 'react-rails'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
