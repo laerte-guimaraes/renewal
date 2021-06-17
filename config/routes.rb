@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 	devise_scope :user do
 	  authenticated :user do
 	    root 'home#dashboard', as: :authenticated_root
+
+	    resources :components, only: %i[index]
 	  end
 
 	  unauthenticated do
