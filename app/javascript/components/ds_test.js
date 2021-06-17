@@ -5,7 +5,7 @@ export default function banner(){
   return (
     <Theme>
       <Banner withClose>
-        "Use banners para a comunicação da Vindi na plataforma. Consulte o guia de Tom & Voz na hora de escrever :)"
+        "Use banners para a comunicação com os usuários :)"
       </Banner>
     </Theme>
   )
